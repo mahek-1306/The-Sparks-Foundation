@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UjjwalKal for Her</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="logo.png" alt="NGO Logo"> 
+            <h1> UjjwalKal for Her</h1>
+        </div>
+        
+        <nav>
+            <ul>
+                <li> <a href="#home">Home</a></li>
+                <li> <a href="#about">About Us</a></li>
+                <li> <a href="#impact">Our Impact</a></li>
+                <li> <a href="#donate">Donate</a></li>
+                <li> <a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="hero">
+        <h1> 
+            Help Us Make a Difference
+        </h1>
+        <p>
+            Join us  in our Mission <br>
+            <b> "Empowering Girls, Transforming Futures: Our mission is to ensure equal access to education for every girl, breaking barriers and providing resources to help them grow, lead, and build a brighter future."       
+        </p>
+        <button onclick="document.getElementById('donate').scrollIntoView()">Donate Now</button>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            Our organization was founded in 2020 by a group of young girls and women who believe in the power of education. We strive to empower girls to make a difference in their communities by providing quality education and resources to help them grow, lead, and build a brighter future.
+        </p>
+    </section>
+    <section id="impact">
+        <h2>Our Impact</h2>
+        <p>
+            We have achieved improved school enrollment rates for girls, provided scholarships to over 500 underprivileged students, and established community programs that have empowered thousands of young women with skills and knowledge for a brighter future.
+        </p>
+        <img src="impact.jpeg" alt="Impact Image">
+    </section>
+
+    <section id="donate">
+        <h2>Donate</h2>
+        <p>
+            Your support makes a difference.
+        </p>
+            <label for = "amount">Donation Amount: </label>
+            <input type="number" id="amount" name="amount" min="1" placeholder="Enter Donation Amount." required>
+            <div id="paypal-button-container"></div>
+            <!-- <button type="submit">Donate</button> -->
+            <script type="text/javascript" src="https://sandbox.paypal.com/sdk/js?client-id=AfzvtvJDY1u-2SP6n8hPo39vgxZP-47G_-bKgN_ydRlmAlb_znZXtM1F5o9rTieYdPIEgCyQl4fJtZo1&components=buttons"></script>
+
+            <script>
+                
+
+                paypal.Buttons({ 
+                    createOrder: function(data, actions) {
+                        return actions.order.create({
+                            purchase_units: [{
+                                amount: {
+                                    currency_code: "USD",
+                                    value: document.getElementById('amount').value || '1.00'
+                                }
+                            }]
+                        });
+                    },
+                    onApprove: function(data, actions) {
+                        return actions.order.capture().then(function(details) {
+                            alert('Transaction completed by'+ details.payer.name.given_name);
+                            window.location.href = 'paymentSuccess.html';
+                        });
+                    },
+                    onError: function(err) {
+                        console.log('PayPal Error:', err);
+                    }
+                }).render('#paypal-button-container');
+
+            </script>
+    </section>
+
+    <footer>
+        <p> &copy; UjjwalKal for Her</p>
+        <ul>
+            <li> <a href="#">Facebook</a></li>
+            <li> <a href="#">Twitter</a></li>
+            <li> <a href="#">Instagram</a></li>
+            <li> <a href="#">LinkedIn</a></li> 
+        </ul>
+    </footer>
+</body>
+</html>

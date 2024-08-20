@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ff9933;
+    background-position: center;
+    background-attachment: fixed;
+    color: #000000;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0pc 2px 20px rgba(0, 0, 0, 0.9);
+    
+}
+
+.header-content{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header img {
+    height: 200px;
+    margin-right: 20px;
+}
+
+header h1 {
+    font-size: 30px;
+    text-align: left;
+    margin: 0px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    margin: 0px;
+    
+}
+
+nav ul li a {
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+#hero {
+   /* background-image: url('hero-image.jpeg');
+    background-size: cover;*/
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+    /*color: #fff;*/
+}
+
+#hero h1 {
+    text-align: center;
+    font-size: 50px;
+    
+}
+
+#hero p {
+    line-height: 1.6;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+#hero button{
+    background-color: #ff6600;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#hero button:hover {
+    background-color: #ff9933;
+}
+
+section {
+    padding: 50px;
+}
+
+#about, #impact, #donate {
+    background-color: #fff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    
+}
+
+#about {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+#about p{
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 20px;
+}
+
+#impact {
+    text-align: center;
+}
+
+#impact img {
+    max-width: 900px;
+    border-radius: 10px;
+    
+}
+
+#impact p{
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 20px;
+}
+
+#donate {
+    text-align: left;
+}
+
+#donate form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+#donate input {
+    width: 20%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#paypal-button-container {
+    margin-top: 20px;
+}
+
+/* #donate button {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+} */
+
+footer {
+    background-color: #333;
+    padding: 25px;
+    color: #fff;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    justify-content: center;
+    display: flex;
+    gap : 20px;
+}
+
+footer li a {
+    color:#fff;
+    text-decoration: none;
+}
